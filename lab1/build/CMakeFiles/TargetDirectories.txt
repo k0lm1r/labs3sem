@@ -1,3 +1,3 @@
-C:/Projects/VSCode/labs/sem3/lab1/build/CMakeFiles/lab.dir
-C:/Projects/VSCode/labs/sem3/lab1/build/CMakeFiles/edit_cache.dir
-C:/Projects/VSCode/labs/sem3/lab1/build/CMakeFiles/rebuild_cache.dir
+C:/Projects/VSCode/labs/labs3sem/lab1/build/CMakeFiles/lab.dir
+C:/Projects/VSCode/labs/labs3sem/lab1/build/CMakeFiles/edit_cache.dir
+C:/Projects/VSCode/labs/labs3sem/lab1/build/CMakeFiles/rebuild_cache.dir

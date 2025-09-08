@@ -1,5 +1,5 @@
 CMakeFiles/lab.dir/main.cpp.obj: \
- C:\Projects\VSCode\labs\sem3\lab1\main.cpp \
+ C:\Projects\VSCode\labs\labs3sem\lab1\main.cpp \
  C:/Users/ADMIN/MinGW/w64devkit/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iostream \
  C:/Users/ADMIN/MinGW/w64devkit/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/requires_hosted.h \
  C:/Users/ADMIN/MinGW/w64devkit/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -179,6 +179,4 @@ CMakeFiles/lab.dir/main.cpp.obj: \
  C:/Users/ADMIN/MinGW/w64devkit/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream.tcc \
  C:/Users/ADMIN/MinGW/w64devkit/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/istream \
  C:/Users/ADMIN/MinGW/w64devkit/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/istream.tcc \
- C:/Users/ADMIN/MinGW/w64devkit/x86_64-w64-mingw32/include/conio.h \
- C:/Users/ADMIN/MinGW/w64devkit/x86_64-w64-mingw32/include/sec_api/conio_s.h \
- C:/Projects/VSCode/labs/sem3/lab1/Matrix/Matrix.hpp
+ C:/Projects/VSCode/labs/labs3sem/lab1/Matrix/Matrix.hpp

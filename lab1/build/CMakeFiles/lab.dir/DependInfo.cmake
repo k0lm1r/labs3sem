@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Projects/VSCode/labs/sem3/lab1/Matrix/Matrix.cpp" "CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj" "gcc" "CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj.d"
-  "C:/Projects/VSCode/labs/sem3/lab1/main.cpp" "CMakeFiles/lab.dir/main.cpp.obj" "gcc" "CMakeFiles/lab.dir/main.cpp.obj.d"
+  "C:/Projects/VSCode/labs/labs3sem/lab1/Matrix/Matrix.cpp" "CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj" "gcc" "CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj.d"
+  "C:/Projects/VSCode/labs/labs3sem/lab1/main.cpp" "CMakeFiles/lab.dir/main.cpp.obj" "gcc" "CMakeFiles/lab.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

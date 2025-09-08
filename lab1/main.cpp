@@ -1,6 +1,5 @@
 #include <iostream>
-#include <conio.h>
-#include <Matrix.hpp>
+#include "Matrix/Matrix.hpp"
 
 int main() {
     int n1, m1, n2, m2;

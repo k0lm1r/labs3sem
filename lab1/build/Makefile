@@ -56,10 +56,10 @@ RM = C:\Users\ADMIN\MinGW\w64devkit\CMake\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Projects\VSCode\labs\sem3\lab1
+CMAKE_SOURCE_DIR = C:\Projects\VSCode\labs\labs3sem\lab1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Projects\VSCode\labs\sem3\lab1\build
+CMAKE_BINARY_DIR = C:\Projects\VSCode\labs\labs3sem\lab1\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Projects\VSCode\labs\sem3\lab1\build\CMakeFiles C:\Projects\VSCode\labs\sem3\lab1\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Projects\VSCode\labs\labs3sem\lab1\build\CMakeFiles C:\Projects\VSCode\labs\labs3sem\lab1\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Projects\VSCode\labs\sem3\lab1\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Projects\VSCode\labs\labs3sem\lab1\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

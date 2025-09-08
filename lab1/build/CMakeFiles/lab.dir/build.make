@@ -52,10 +52,10 @@ RM = C:\Users\ADMIN\MinGW\w64devkit\CMake\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Projects\VSCode\labs\sem3\lab1
+CMAKE_SOURCE_DIR = C:\Projects\VSCode\labs\labs3sem\lab1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Projects\VSCode\labs\sem3\lab1\build
+CMAKE_BINARY_DIR = C:\Projects\VSCode\labs\labs3sem\lab1\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lab.dir/depend.make
@@ -73,33 +73,33 @@ CMakeFiles/lab.dir/codegen:
 
 CMakeFiles/lab.dir/main.cpp.obj: CMakeFiles/lab.dir/flags.make
 CMakeFiles/lab.dir/main.cpp.obj: CMakeFiles/lab.dir/includes_CXX.rsp
-CMakeFiles/lab.dir/main.cpp.obj: C:/Projects/VSCode/labs/sem3/lab1/main.cpp
+CMakeFiles/lab.dir/main.cpp.obj: C:/Projects/VSCode/labs/labs3sem/lab1/main.cpp
 CMakeFiles/lab.dir/main.cpp.obj: CMakeFiles/lab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Projects\VSCode\labs\sem3\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab.dir/main.cpp.obj"
-	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab.dir/main.cpp.obj -MF CMakeFiles\lab.dir\main.cpp.obj.d -o CMakeFiles\lab.dir\main.cpp.obj -c C:\Projects\VSCode\labs\sem3\lab1\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Projects\VSCode\labs\labs3sem\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab.dir/main.cpp.obj"
+	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab.dir/main.cpp.obj -MF CMakeFiles\lab.dir\main.cpp.obj.d -o CMakeFiles\lab.dir\main.cpp.obj -c C:\Projects\VSCode\labs\labs3sem\lab1\main.cpp
 
 CMakeFiles/lab.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lab.dir/main.cpp.i"
-	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Projects\VSCode\labs\sem3\lab1\main.cpp > CMakeFiles\lab.dir\main.cpp.i
+	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Projects\VSCode\labs\labs3sem\lab1\main.cpp > CMakeFiles\lab.dir\main.cpp.i
 
 CMakeFiles/lab.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lab.dir/main.cpp.s"
-	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Projects\VSCode\labs\sem3\lab1\main.cpp -o CMakeFiles\lab.dir\main.cpp.s
+	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Projects\VSCode\labs\labs3sem\lab1\main.cpp -o CMakeFiles\lab.dir\main.cpp.s
 
 CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj: CMakeFiles/lab.dir/flags.make
 CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj: CMakeFiles/lab.dir/includes_CXX.rsp
-CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj: C:/Projects/VSCode/labs/sem3/lab1/Matrix/Matrix.cpp
+CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj: C:/Projects/VSCode/labs/labs3sem/lab1/Matrix/Matrix.cpp
 CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj: CMakeFiles/lab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Projects\VSCode\labs\sem3\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj"
-	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj -MF CMakeFiles\lab.dir\Matrix\Matrix.cpp.obj.d -o CMakeFiles\lab.dir\Matrix\Matrix.cpp.obj -c C:\Projects\VSCode\labs\sem3\lab1\Matrix\Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Projects\VSCode\labs\labs3sem\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj"
+	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab.dir/Matrix/Matrix.cpp.obj -MF CMakeFiles\lab.dir\Matrix\Matrix.cpp.obj.d -o CMakeFiles\lab.dir\Matrix\Matrix.cpp.obj -c C:\Projects\VSCode\labs\labs3sem\lab1\Matrix\Matrix.cpp
 
 CMakeFiles/lab.dir/Matrix/Matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lab.dir/Matrix/Matrix.cpp.i"
-	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Projects\VSCode\labs\sem3\lab1\Matrix\Matrix.cpp > CMakeFiles\lab.dir\Matrix\Matrix.cpp.i
+	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Projects\VSCode\labs\labs3sem\lab1\Matrix\Matrix.cpp > CMakeFiles\lab.dir\Matrix\Matrix.cpp.i
 
 CMakeFiles/lab.dir/Matrix/Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lab.dir/Matrix/Matrix.cpp.s"
-	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Projects\VSCode\labs\sem3\lab1\Matrix\Matrix.cpp -o CMakeFiles\lab.dir\Matrix\Matrix.cpp.s
+	C:\Users\ADMIN\MinGW\w64devkit\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Projects\VSCode\labs\labs3sem\lab1\Matrix\Matrix.cpp -o CMakeFiles\lab.dir\Matrix\Matrix.cpp.s
 
 # Object files for target lab
 lab_OBJECTS = \
@@ -115,7 +115,7 @@ lab.exe: CMakeFiles/lab.dir/build.make
 lab.exe: CMakeFiles/lab.dir/linkLibs.rsp
 lab.exe: CMakeFiles/lab.dir/objects1.rsp
 lab.exe: CMakeFiles/lab.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Projects\VSCode\labs\sem3\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lab.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Projects\VSCode\labs\labs3sem\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lab.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\lab.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +127,6 @@ CMakeFiles/lab.dir/clean:
 .PHONY : CMakeFiles/lab.dir/clean
 
 CMakeFiles/lab.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Projects\VSCode\labs\sem3\lab1 C:\Projects\VSCode\labs\sem3\lab1 C:\Projects\VSCode\labs\sem3\lab1\build C:\Projects\VSCode\labs\sem3\lab1\build C:\Projects\VSCode\labs\sem3\lab1\build\CMakeFiles\lab.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Projects\VSCode\labs\labs3sem\lab1 C:\Projects\VSCode\labs\labs3sem\lab1 C:\Projects\VSCode\labs\labs3sem\lab1\build C:\Projects\VSCode\labs\labs3sem\lab1\build C:\Projects\VSCode\labs\labs3sem\lab1\build\CMakeFiles\lab.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/lab.dir/depend
 
