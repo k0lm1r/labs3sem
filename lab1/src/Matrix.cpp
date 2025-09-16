@@ -68,9 +68,7 @@ Matrix Matrix::multiply(std::vector<Matrix> allMatrixes) const {
 }
 
 Matrix& Matrix::operator=(const Matrix& mtx) {
-    if (&mtx != this) {
-        freeData();
-        
+    if (&mtx != this) {  
         this->rows = mtx.rows;
         this->columns = mtx.columns;
 
