@@ -1,33 +1,21 @@
 #pragma once
-#include <iostream>
 #include "Matrix.h"
+#include <vector>
+#include <iostream>
+#include <conio.h>
 
 class Menu {
 private:
-    Matrix* defaultMatrix;
-    Matrix* paramMatrix;
-    Matrix* copyMatrix;
-    Matrix* currentMatrix;
+    Matrix currentMatrix;
+    std::vector<Matrix> matrixList;
     
-    void printMainMenu();
-    void printConstructorMenu();
-    void printOperationsMenu();
-    void printSelectMatrixMenu();
-    void demonstrateDefaultConstructor();
-    void demonstrateParameterConstructor();
-    void demonstrateCopyConstructor();
-    void fillCurrentMatrix();
-    void printCurrentMatrix();
-    void multiplyMatrices();
-    void showAllMatrices();
-    void selectCurrentMatrix();
-
+    void showMenu() const;
+    void handleChoice(int choice);
+    void createAndFillMatrix();
+    void multiplyTwoMatrices();
+    void multiplyMatrixChain();
+    void showCurrentMatrix() const;
+    
 public:
-    Menu() : defaultMatrix(nullptr), paramMatrix(nullptr), copyMatrix(nullptr), currentMatrix(nullptr) {}
-
-    ~Menu() {
-        if (defaultMatrix != nullptr) delete defaultMatrix;
-        if (paramMatrix != nullptr) delete paramMatrix;
-        if (copyMatrix != nullptr) delete copyMatrix;
-    }
+    void run();
 };
