@@ -18,10 +18,18 @@ class Matrix {
                 data[i] = new double[columns]();
         }
 
-        Matrix(const Matrix& mtx) : data(nullptr) {
-            *this = mtx;
+        Matrix(const Matrix &mtx) : data(nullptr) {
+            this->rows = mtx.rows;
+            this->columns = mtx.columns;
+
+            data = new double *[rows]();
+            for (size_t i = 0; i < rows; ++i) {
+                data[i] = new double[columns]();
+                for (size_t j = 0; j < columns; ++j)
+                    data[i][j] = mtx.data[i][j];
+            }
         }
-        
+
         void print() const;
         void fill();
         Matrix multiply(const Matrix& mtx) const;
