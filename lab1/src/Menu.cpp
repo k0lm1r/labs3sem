@@ -16,6 +16,8 @@ void Menu::handleChoice(int choice) {
         case 2: multiplyTwoMatrices(); break;
         case 3: multiplyMatrixChain(); break;
         case 4: showCurrentMatrix(); break;
+        case 5: break;
+        default: std::cout << "Неверный выбор" << std::endl;
     }
 }
 

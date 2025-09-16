@@ -33,17 +33,15 @@ void Matrix::fill() {
     std::cout << "Матрица успешно заполнена" << std::endl;
 }
 
-Matrix Matrix::multiply(const Matrix& mtx) {
+Matrix Matrix::multiply(const Matrix& mtx) const {
     Matrix result;
 
-    if (!mtx.isEmpty() && !isEmpty()) {
-        if (columns == mtx.rows) {
-            result = Matrix(rows, mtx.columns);
-            for (size_t row = 0; row < rows; ++row) {
-                for (size_t mtxColumn = 0; mtxColumn < mtx.columns; ++mtxColumn)
-                    for (size_t current = 0; current < columns; ++current)
-                        result.data[row][mtxColumn] += data[row][current] * mtx.data[current][mtxColumn];
-            }
+    if (!mtx.isEmpty() && !isEmpty() && columns == mtx.rows) {
+        result = Matrix(rows, mtx.columns);
+        for (size_t row = 0; row < rows; ++row) {
+            for (size_t mtxColumn = 0; mtxColumn < mtx.columns; ++mtxColumn)
+                for (size_t current = 0; current < columns; ++current)
+                    result.data[row][mtxColumn] += data[row][current] * mtx.data[current][mtxColumn];
         }
     }
 
