@@ -48,7 +48,7 @@ Matrix Matrix::multiply(const Matrix& mtx) const {
     return result;
 }
 
-Matrix Matrix::multiply(std::vector<Matrix> allMatrixes) {
+Matrix Matrix::multiply(std::vector<Matrix> allMatrixes) const {
     Matrix result;
 
     size_t columnsInResult = allMatrixes[0].columns;
@@ -76,7 +76,7 @@ Matrix& Matrix::operator=(const Matrix& mtx) {
 
         data = new double*[rows];
         for (size_t i = 0; i < rows; ++i) {
-            data[i] = new double[columns];
+            data[i] = new double[columns]();
             for (size_t j = 0; j < columns; ++j)
                 data[i][j] = mtx.data[i][j];
         }

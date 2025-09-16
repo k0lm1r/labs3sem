@@ -25,7 +25,7 @@ class Matrix {
         void print() const;
         void fill();
         Matrix multiply(const Matrix& mtx) const;
-        Matrix multiply(std::vector<Matrix> arr);
+        Matrix multiply(std::vector<Matrix> arr) const;
         Matrix& operator=(const Matrix& mtx);
         bool isEmpty() const;
         
