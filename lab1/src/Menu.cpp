@@ -1,6 +1,6 @@
 #include "Menu.h"
 
-void Menu::showMenu() const {
+void Menu::showMenu() {
     std::cout << "\n=== МЕНЮ РАБОТЫ С МАТРИЦАМИ ===" << std::endl;
     std::cout << "1. Создать и заполнить матрицу" << std::endl;
     std::cout << "2. Умножить две матрицы" << std::endl;
@@ -76,7 +76,7 @@ void Menu::multiplyMatrixChain() {
     }
 }
 
-void Menu::showCurrentMatrix() const {
+void Menu::showCurrentMatrix() {
     std::cout << "Текущая матрица:" << std::endl;
     currentMatrix.print();
 }

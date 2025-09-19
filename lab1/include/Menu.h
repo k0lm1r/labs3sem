@@ -2,20 +2,19 @@
 #include "Matrix.h"
 #include <vector>
 #include <iostream>
-#include <conio.h>
 
 class Menu {
 private:
-    Matrix currentMatrix;
-    std::vector<Matrix> matrixList;
+    static Matrix currentMatrix;
+    static std::vector<Matrix> matrixList;
     
-    void showMenu() const;
-    void handleChoice(int choice);
-    void createAndFillMatrix();
-    void multiplyTwoMatrices();
-    void multiplyMatrixChain();
-    void showCurrentMatrix() const;
+    static void showMenu();
+    static void handleChoice(int choice);
+    static void createAndFillMatrix();
+    static void multiplyTwoMatrices();
+    static void multiplyMatrixChain();
+    static void showCurrentMatrix();
     
 public:
-    void run();
+    static void run();
 };

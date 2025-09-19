@@ -1,5 +1,23 @@
 #include "Matrix.h"
 
+Matrix::Matrix(const size_t newRows, const size_t newColumns) : rows(newRows), columns(newColumns) {
+    data = new double *[rows];
+    for (size_t i = 0; i < rows; ++i)
+        data[i] = new double[columns]();
+}
+
+Matrix::Matrix(const Matrix &mtx) : data(nullptr) {
+    this->rows = mtx.rows;
+    this->columns = mtx.columns;
+
+    data = new double *[rows]();
+    for (size_t i = 0; i < rows; ++i) {
+        data[i] = new double[columns]();
+        for (size_t j = 0; j < columns; ++j)
+            data[i][j] = mtx.data[i][j];
+    }
+}
+
 void Matrix::freeData() {
     if (data != nullptr) {
         for (size_t i = 0; i < rows; ++i) 

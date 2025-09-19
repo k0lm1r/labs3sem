@@ -2,6 +2,5 @@
 #include "Matrix.h"
 
 int main() {
-    Menu m;
-    m.run();
+    Menu::run();
 }
