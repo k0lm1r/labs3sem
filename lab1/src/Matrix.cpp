@@ -73,7 +73,7 @@ Matrix& Matrix::operator=(const Matrix& mtx) {
         for (size_t i = 0; i < rows; ++i) {
             data[i] = new double[columns];
             for (size_t j = 0; j < columns; ++j)
-                data[i][j] = mtx.data[i][j];
+                std::copy(mtx.data[i], mtx.data[i] + j, data[i]);
         }
     }
     return *this;
