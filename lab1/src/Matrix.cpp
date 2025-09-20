@@ -18,14 +18,6 @@ Matrix::Matrix(const Matrix &mtx) : data(nullptr) {
     }
 }
 
-void Matrix::freeData() {
-    if (data != nullptr) {
-        for (size_t i = 0; i < rows; ++i) 
-            delete[] data[i];
-        delete[] data;
-    }
-}
-
 void Matrix::print() const {
     if (!isEmpty()) {
         for (size_t i = 0; i < rows; ++i) {
@@ -41,7 +33,9 @@ void Matrix::fill() {
     if (isEmpty()) {
         std::cout << "Введите размеры мaтрицы:" << std::endl;
         std::cin >> rows >> columns;
-        *this = Matrix(rows, columns);    
+        data = new double*[rows]();
+        for (int i = 0; i < rows; ++i)
+            data[i] = new double[columns]();
     }
 
     std::cout << "Введите элементы матрицы:" << std::endl;
@@ -66,42 +60,14 @@ Matrix Matrix::multiply(const Matrix& mtx) const {
     return result;
 }
 
-Matrix Matrix::multiply(std::vector<Matrix> allMatrixes) const {
-    Matrix result;
-
-    size_t columnsInResult = allMatrixes[0].columns;
-    for (size_t i = 1; i < allMatrixes.size(); ++i) {
-        if (allMatrixes[i].rows != columnsInResult) {
-            std::cout << "Начиная с индекса " << i << " умножение невозможно." << std::endl;
-            return result;
-        }
-        columnsInResult = allMatrixes[i].rows;
-    }
-
-    result = Matrix(multiply(allMatrixes[0]));
-    for (size_t i = 1; i < allMatrixes.size(); ++i)
-        result = result.multiply(allMatrixes[i]);
-
-    return result;
-}
-
-Matrix& Matrix::operator=(const Matrix& mtx) {
-    if (&mtx != this) {
-        freeData();
-        
-        this->rows = mtx.rows;
-        this->columns = mtx.columns;
-
-        data = new double*[rows]();
-        for (size_t i = 0; i < rows; ++i) {
-            data[i] = new double[columns]();
-            for (size_t j = 0; j < columns; ++j)
-                data[i][j] = mtx.data[i][j];
-        }
-    }
-    return *this;
-}
-
 bool Matrix::isEmpty() const {
     return data == nullptr;
+}
+
+Matrix::~Matrix() {
+    if (data != nullptr) {
+        for (size_t i = 0; i < rows; ++i) 
+            delete[] data[i];
+        delete[] data;
+    }
 }
