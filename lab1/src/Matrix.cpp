@@ -65,8 +65,9 @@ Matrix& Matrix::operator=(const Matrix& mtx) {
             delete[] data;
         }
 
-        this->rows = mtx.rows;
-        this->columns = mtx.columns;
+        rows = mtx.rows;
+        columns = mtx.columns;
+        data = nullptr;
 
         data = new double*[rows];
         for (size_t i = 0; i < rows; ++i) {
