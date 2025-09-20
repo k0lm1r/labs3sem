@@ -8,8 +8,8 @@ int main() {
     int r2, c2;
     std::cin >> r2 >> c2;
     Matrix m2(r2, c2);
-    
     m2.fill();
+    
     Matrix m3(m2);
 
     Matrix res = m1.multiply(m3);

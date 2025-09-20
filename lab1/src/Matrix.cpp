@@ -6,10 +6,7 @@ Matrix::Matrix(const size_t newRows, const size_t newColumns) : rows(newRows), c
         data[i] = new double[columns]();
 }
 
-Matrix::Matrix(const Matrix &mtx) : data(nullptr) {
-    this->rows = mtx.rows;
-    this->columns = mtx.columns;
-
+Matrix::Matrix(const Matrix &mtx) : rows(mtx.rows), columns(mtx.columns), data(nullptr) {
     data = new double *[rows]();
     for (size_t i = 0; i < rows; ++i) {
         data[i] = new double[columns]();
@@ -34,7 +31,7 @@ void Matrix::fill() {
         std::cout << "Введите размеры мaтрицы:" << std::endl;
         std::cin >> rows >> columns;
         data = new double*[rows]();
-        for (int i = 0; i < rows; ++i)
+        for (size_t i = 0; i < rows; ++i)
             data[i] = new double[columns]();
     }
 
@@ -58,6 +55,27 @@ Matrix Matrix::multiply(const Matrix& mtx) const {
     }
 
     return result;
+}
+
+Matrix& Matrix::operator=(const Matrix& mtx) {
+    if (&mtx != this) {
+        if (data != nullptr) {
+            for (size_t i = 0; i < rows; ++i) 
+                delete[] data[i];
+            delete[] data;
+        }
+
+        this->rows = mtx.rows;
+        this->columns = mtx.columns;
+
+        data = new double*[rows]();
+        for (size_t i = 0; i < rows; ++i) {
+            data[i] = new double[columns]();
+            for (size_t j = 0; j < columns; ++j)
+                data[i][j] = mtx.data[i][j];
+        }
+    }
+    return *this;
 }
 
 bool Matrix::isEmpty() const {
