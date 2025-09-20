@@ -68,9 +68,9 @@ Matrix& Matrix::operator=(const Matrix& mtx) {
         this->rows = mtx.rows;
         this->columns = mtx.columns;
 
-        data = new double*[rows]();
+        data = new double*[rows];
         for (size_t i = 0; i < rows; ++i) {
-            data[i] = new double[columns]();
+            data[i] = new double[columns];
             for (size_t j = 0; j < columns; ++j)
                 data[i][j] = mtx.data[i][j];
         }
