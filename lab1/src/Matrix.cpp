@@ -6,10 +6,10 @@ Matrix::Matrix(const size_t newRows, const size_t newColumns) : rows(newRows), c
         data[i] = new double[columns]();
 }
 
-Matrix::Matrix(const Matrix &mtx) : rows(mtx.rows), columns(mtx.columns), data(nullptr) {
-    data = new double *[rows]();
+Matrix::Matrix(const Matrix &mtx) : rows(mtx.rows), columns(mtx.columns) {
+    data = new double *[rows];
     for (size_t i = 0; i < rows; ++i) {
-        data[i] = new double[columns]();
+        data[i] = new double[columns];
         for (size_t j = 0; j < columns; ++j)
             data[i][j] = mtx.data[i][j];
     }
@@ -39,7 +39,6 @@ void Matrix::fill() {
     for (size_t i = 0; i < rows; ++i)
         for (size_t j = 0; j < columns; ++j) 
             std::cin >> data[i][j];
-    std::cout << "Матрица успешно заполнена" << std::endl;
 }
 
 Matrix Matrix::multiply(const Matrix& mtx) const {
