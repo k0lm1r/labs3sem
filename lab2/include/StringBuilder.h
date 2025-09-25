@@ -1,17 +1,18 @@
 #pragma once
 #include <iostream>
 #include <algorithm>
+#include <cstring>
 
 class StringBuilder {
-    int size;
-    char* string;
+    int size = 0;
+    char* string = nullptr;
 
     public:
         StringBuilder() = default;
-        StringBuilder(const int size) : size(size) {}
+        StringBuilder(const char* string);
         StringBuilder(const StringBuilder& other);
+        void setString(const char* str);
 
-        void setString(const char* string);
         bool operator!();
         StringBuilder operator()(int start, int end);
         char operator[](int index);

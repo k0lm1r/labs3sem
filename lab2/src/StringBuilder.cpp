@@ -1,14 +1,17 @@
 #include "StringBuilder.h"
 
-StringBuilder::StringBuilder(const StringBuilder& other) : size(size) {
+StringBuilder::StringBuilder(const StringBuilder& other) : size(other.size) {
     std::copy(other.string, other.string + other.size, this->string);
 }
 
+StringBuilder::StringBuilder(const char* string) {
+    this->setString(string);
+}
+
 void StringBuilder::setString(const char* string) {
-    if (string != nullptr) {
-        std::copy(string, string + strlen(string), this->string);
-        this->size = strlen(string);
-    }
+    this->string = new char[strlen(string)];
+    std::copy(string, string + strlen(string), this->string);
+    this->size = strlen(string);
 }
 
 bool StringBuilder::operator!() {
@@ -16,12 +19,10 @@ bool StringBuilder::operator!() {
 }
 
 StringBuilder StringBuilder::operator()(int first, int last) {
-    char *substr = new char[last - first];
+    char *substr = new char[last - first + 1];
     std::copy(this->string + first, this->string + last, substr);
-
-    StringBuilder newString;
-    newString.setString(substr);
-
+    substr[last - first] = '\0';
+    StringBuilder newString(substr);
     return newString;
 }
 
@@ -30,15 +31,35 @@ char StringBuilder::operator[](int index) {
 }
 
 std::ostream& operator<<(std::ostream& os, const StringBuilder& str) {
-    os << str.string;
+    for (int i = 0; i < str.size; ++i) os << str.string[i];
     return os;
 }
 
 std::istream& operator>>(std::istream& in, StringBuilder& str) {
-    char* newString;
+    int capacity = 5, index = 0;
+    char* string = new char[capacity]; 
+    char currentChar;
 
-    
-    
-    str.setString(newString);
+    currentChar = std::cin.get();
+    while (currentChar != '\n') {
+        if (index == capacity - 1) {
+            capacity *= 2;
+            char *newString = new char[capacity];
+            std::copy(string, string + strlen(string), newString);
+            delete[] string;
+            string = newString;
+        }
+        string[index] = currentChar;
+        currentChar = std::cin.get();
+        index++;
+    }
+    string[index] = '\0';
+
+    str.setString(string);
     return in;
+}
+
+
+StringBuilder::~StringBuilder() {
+    if (string != nullptr) delete[] string;
 }
