@@ -18,6 +18,6 @@ class Matrix {
         Matrix multiply(const Matrix& mtx) const;
         Matrix& operator=(const Matrix& mtx);
         bool isEmpty() const;
-        
+
         ~Matrix();
 };

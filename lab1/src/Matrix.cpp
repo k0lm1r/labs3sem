@@ -28,14 +28,12 @@ void Matrix::print() const {
 
 void Matrix::fill() {
     if (isEmpty()) {
-        std::cout << "Введите размеры мaтрицы:" << std::endl;
         std::cin >> rows >> columns;
         data = new double*[rows]();
         for (size_t i = 0; i < rows; ++i)
             data[i] = new double[columns]();
     }
 
-    std::cout << "Введите элементы матрицы:" << std::endl;
     for (size_t i = 0; i < rows; ++i)
         for (size_t j = 0; j < columns; ++j) 
             std::cin >> data[i][j];

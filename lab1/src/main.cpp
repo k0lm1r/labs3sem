@@ -1,20 +1,27 @@
 #include "Matrix.h"
 
 int main() {
-    Matrix m1;
-    m1.fill();
+    int choice = 1;
 
-    std::cout << "Введите размеры второй матрицы:" << std::endl;
-    int r2, c2;
-    std::cin >> r2 >> c2;
-    Matrix m2(r2, c2);
-    m2.fill();
-    
-    Matrix m3(m2);
+    do {
+        std::cout << "Введите количество перемножаемых матриц:" << std::endl;
+        int n;
+        std::cin >> n;
 
-    Matrix res = m1.multiply(m3);
-    if (res.isEmpty())
-        std::cout << "Матрицы невозможно перемножить." << std::endl;
-    else 
-        res.print();
+        Matrix result;
+        std::cout << "Матрица 1:" << std::endl;
+        result.fill();
+        for (int i = 1; i < n; ++i) {
+            if (!result.isEmpty()) {
+                std::cout << "Матрица " << i + 1 << ":" << std::endl;
+                Matrix current;
+                current.fill();
+                result = result.multiply(current);
+            } else 
+                std::cout << "Умножение на данную матрицу невозможно!" << std::endl;
+        }
+
+        std::cout << "Вы хотите перезапустить?\n1 - Да.\n2 - Нет." << std::endl;
+        std::cin >> choice;
+    } while (choice != 2);
 }
