@@ -23,6 +23,7 @@ StringBuilder StringBuilder::operator()(int first, int last) {
     std::copy(this->string + first, this->string + last, substr);
     substr[last - first] = '\0';
     StringBuilder newString(substr);
+    delete[] substr;
     return newString;
 }
 
@@ -56,6 +57,7 @@ std::istream& operator>>(std::istream& in, StringBuilder& str) {
     string[index] = '\0';
 
     str.setString(string);
+    delete[] string;
     return in;
 }
 
