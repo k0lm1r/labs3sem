@@ -9,17 +9,19 @@ int main() {
         std::cin >> n;
 
         Matrix result;
-        std::cout << "Матрица 1:" << std::endl;
-        result.fill();
+        std::cout << "Матрица 1(размер и элементы):" << std::endl;
+       std::cin >> result;
         for (int i = 1; i < n; ++i) {
             if (!result.isEmpty()) {
-                std::cout << "Матрица " << i + 1 << ":" << std::endl;
+                std::cout << "Матрица " << i + 1 << "(размер и элементы):" << std::endl;
                 Matrix current;
                 current.fill();
-                result = result.multiply(current);
+                result *= current;
             } else 
                 std::cout << "Умножение на данную матрицу невозможно!" << std::endl;
         }
+
+        std::cout << result;
 
         std::cout << "Вы хотите перезапустить?\n1 - Да.\n2 - Нет." << std::endl;
         std::cin >> choice;

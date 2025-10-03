@@ -17,7 +17,12 @@ class Matrix {
         void fill();
         Matrix multiply(const Matrix& mtx) const;
         Matrix& operator=(const Matrix& mtx);
+        Matrix operator*(const Matrix& mtx) const;
+        Matrix operator*=(const Matrix& mtx);
         bool isEmpty() const;
+
+        friend std::ostream& operator<<(std::ostream& os, const Matrix& mtx);
+        friend std::istream& operator>>(std::istream& is, Matrix& mtx);
 
         ~Matrix();
 };
