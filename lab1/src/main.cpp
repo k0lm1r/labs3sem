@@ -15,7 +15,7 @@ int main() {
             if (!result.isEmpty()) {
                 std::cout << "Матрица " << i + 1 << "(размер и элементы):" << std::endl;
                 Matrix current;
-                current.fill();
+                std::cin >> current;
                 result *= current;
             } else 
                 std::cout << "Умножение на данную матрицу невозможно!" << std::endl;

@@ -15,45 +15,6 @@ Matrix::Matrix(const Matrix &mtx) : rows(mtx.rows), columns(mtx.columns) {
     }
 }
 
-void Matrix::print() const {
-    if (!isEmpty()) {
-        for (size_t i = 0; i < rows; ++i) {
-            for (size_t j = 0; j < columns; ++j) 
-                std::cout << data[i][j] << " ";
-            std::cout << std::endl;
-        }
-    } else 
-        std::cout << "Матрица пуста." << std::endl;
-}
-
-void Matrix::fill() {
-    if (isEmpty()) {
-        std::cin >> rows >> columns;
-        data = new double*[rows];
-        for (size_t i = 0; i < rows; ++i)
-            data[i] = new double[columns]();
-    }
-
-    for (size_t i = 0; i < rows; ++i)
-        for (size_t j = 0; j < columns; ++j) 
-            std::cin >> data[i][j];
-}
-
-Matrix Matrix::multiply(const Matrix& mtx) const {
-    Matrix result;
-
-    if (!mtx.isEmpty() && !isEmpty() && columns == mtx.rows) {
-        result = Matrix(rows, mtx.columns);
-        for (size_t row = 0; row < rows; ++row) {
-            for (size_t mtxColumn = 0; mtxColumn < mtx.columns; ++mtxColumn)
-                for (size_t current = 0; current < columns; ++current)
-                    result.data[row][mtxColumn] += data[row][current] * mtx.data[current][mtxColumn];
-        }
-    }
-
-    return result;
-}
-
 Matrix& Matrix::operator=(const Matrix& mtx) {
     if (&mtx != this) {
         if (data != nullptr) {
@@ -94,8 +55,8 @@ Matrix Matrix::operator*(const Matrix& mtx) const {
 }
 
 Matrix Matrix::operator*=(const Matrix& mtx) {
-    Matrix a = *this * mtx;
-    *this = a;
+    // Matrix a = *this * mtx;
+    *this = *this * mtx;
     return *this;
 }
 

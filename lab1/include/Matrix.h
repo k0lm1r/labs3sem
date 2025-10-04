@@ -13,9 +13,6 @@ class Matrix {
         Matrix(const size_t newRows, const size_t newColumns);
         Matrix(const Matrix &mtx);
 
-        void print() const;
-        void fill();
-        Matrix multiply(const Matrix& mtx) const;
         Matrix& operator=(const Matrix& mtx);
         Matrix operator*(const Matrix& mtx) const;
         Matrix operator*=(const Matrix& mtx);
