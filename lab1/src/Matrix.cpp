@@ -54,8 +54,7 @@ Matrix Matrix::operator*(const Matrix& mtx) const {
     return result;
 }
 
-Matrix Matrix::operator*=(const Matrix& mtx) {
-    // Matrix a = *this * mtx;
+Matrix& Matrix::operator*=(const Matrix& mtx) {
     *this = *this * mtx;
     return *this;
 }

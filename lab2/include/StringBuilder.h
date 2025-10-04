@@ -3,7 +3,8 @@
 #include <algorithm>
 #include <cstring>
 
-class StringBuilder {
+class StringBuilder
+ {
     int size = 0;
     char* string = nullptr;
 
@@ -11,12 +12,17 @@ class StringBuilder {
         StringBuilder() = default;
         StringBuilder(const char* string);
         StringBuilder(const StringBuilder& other);
+        
         void setString(const char* str);
-
         bool operator!();
+        StringBuilder operator+(const StringBuilder& other);
+        StringBuilder operator+(const char* str);
+        StringBuilder& operator=(const StringBuilder& other);
+        StringBUilder& operator=(const char* str);
         StringBuilder operator()(int start, int end);
         char operator[](int index);
 
+        friend StringBuilder operator+(const char* str, const StringBuilder& obj);
         friend std::ostream& operator<<(std::ostream& os, const StringBuilder& str);
         friend std::istream& operator>>(std::istream& is, StringBuilder& str);
 

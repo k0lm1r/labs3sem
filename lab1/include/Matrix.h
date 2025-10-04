@@ -15,7 +15,7 @@ class Matrix {
 
         Matrix& operator=(const Matrix& mtx);
         Matrix operator*(const Matrix& mtx) const;
-        Matrix operator*=(const Matrix& mtx);
+        Matrix& operator*=(const Matrix& mtx);
         bool isEmpty() const;
 
         friend std::ostream& operator<<(std::ostream& os, const Matrix& mtx);

@@ -15,7 +15,7 @@ void StringBuilder::setString(const char* string) {
 }
 
 bool StringBuilder::operator!() {
-    return size == 0;
+    return size == 0 || string == nullptr;
 }
 
 StringBuilder StringBuilder::operator()(int first, int last) {
@@ -37,25 +37,9 @@ std::ostream& operator<<(std::ostream& os, const StringBuilder& str) {
 }
 
 std::istream& operator>>(std::istream& in, StringBuilder& str) {
-    int capacity = 5, index = 0;
-    char* string = new char[capacity]; 
-    char currentChar;
-
-    currentChar = std::cin.get();
-    while (currentChar != '\n') {
-        if (index == capacity - 1) {
-            capacity *= 2;
-            char *newString = new char[capacity];
-            std::copy(string, string + strlen(string), newString);
-            delete[] string;
-            string = newString;
-        }
-        string[index] = currentChar;
-        currentChar = std::cin.get();
-        index++;
-    }
-    string[index] = '\0';
-
+    int capacity = 255;
+    char string[255]; 
+    in >> string;
     str.setString(string);
     delete[] string;
     return in;
