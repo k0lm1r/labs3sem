@@ -15,10 +15,16 @@ class StringBuilder
         
         void setString(const char* str);
         bool operator!();
-        StringBuilder operator+(const StringBuilder& other);
-        StringBuilder operator+(const char* str);
+        StringBuilder operator+(const StringBuilder& other) const;
+        StringBuilder operator+(const char* str) const;
+        StringBuilder operator++(int);
+        StringBuilder& operator++();
+        StringBuilder operator--(int);
+        StringBuilder& operator--();
         StringBuilder& operator=(const StringBuilder& other);
-        StringBUilder& operator=(const char* str);
+        StringBuilder& operator+=(const StringBuilder& other);
+        bool operator>(const StringBuilder& other) const;
+        bool operator<(const StringBuilder& other) const;
         StringBuilder operator()(int start, int end);
         char operator[](int index);
 
