@@ -115,9 +115,9 @@ std::ostream& operator<<(std::ostream& os, const StringBuilder& str) {
 }
 
 std::istream& operator>>(std::istream& in, StringBuilder& str) {
-    char string[50]; 
-    in >> string;
-    str.setString(string);
+    char temp[80]; 
+    in >> temp;
+    str.setString(temp);
     return in;
 }
 

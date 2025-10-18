@@ -15,8 +15,11 @@ class StringBuilder
         
         void setString(const char* str);
         bool operator!();
+
         StringBuilder operator+(const StringBuilder& other) const;
         StringBuilder operator+(const char* str) const;
+        friend StringBuilder operator+(const char* str, const StringBuilder& obj);
+
         StringBuilder operator++(int);
         StringBuilder& operator++();
         StringBuilder operator--(int);
@@ -28,7 +31,7 @@ class StringBuilder
         StringBuilder operator()(int start, int end);
         char operator[](int index);
 
-        friend StringBuilder operator+(const char* str, const StringBuilder& obj);
+       
         friend std::ostream& operator<<(std::ostream& os, const StringBuilder& str);
         friend std::istream& operator>>(std::istream& is, StringBuilder& str);
 
