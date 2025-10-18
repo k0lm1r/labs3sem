@@ -3,7 +3,12 @@
 
 class Car : public Vehicle {
     public:
-        using Vehicle::Vehicle;
+        Car() = default;
+        Car(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight) : Vehicle(speed, costPerPass, costPerKg) {
+            setMaxPass(maxPass);
+            setMaxWeight(maxWeight);
+        }
+        ~Car() = default;
 
         void setMaxPass(int maxPass) override;
         void setMaxWeight(double maxWeight) override;

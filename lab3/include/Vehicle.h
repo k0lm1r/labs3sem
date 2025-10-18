@@ -12,11 +12,7 @@ class Vehicle {
 
     public:
         Vehicle() = default;
-        Vehicle(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight) : speed(speed), costPerPass(costPerPass), costPerKg(costPerKg) {
-            setMaxPass(maxPass);
-            setMaxWeight(maxWeight);
-        }
-
+        Vehicle(double speed, double costPerPass, double costPerKg) : speed(speed), costPerPass(costPerPass), costPerKg(costPerKg) {}
         virtual ~Vehicle() = default;
 
         double getSpeed() const;

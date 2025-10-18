@@ -3,7 +3,12 @@
 
 class Cart : public Vehicle {
     public:
-        using Vehicle::Vehicle;
+        Cart() = default;
+        Cart(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight) : Vehicle(speed, costPerPass, costPerKg) {
+            setMaxPass(maxPass);
+            setMaxWeight(maxWeight);
+        }
+        ~Cart() = default;
 
         void setMaxPass(int maxPass) override;
         void setMaxWeight(double maxWeight) override;

@@ -1,7 +1,6 @@
 #include "Bike.h"
 #include "Car.h"
 #include "Cart.h"
-#include "Vehicle.h"
 
 int main() {
     int choice = 1;
@@ -19,7 +18,7 @@ int main() {
         double weight;
         std::cout << "Введите число пассажиров, расстояние и массу груза:" << std::endl;
         std::cin >> pass >> distance >> weight;
-        std::cout << "Цена перевозки пассажиров и грузов на машине: " << car.calculateCostPassengers(distance, pass) << car.calculateCostWeight(distance, weight) << std::endl;
+        std::cout << "Цена перевозки пассажиров и грузов на машине: " << car.calculateCostPassengers(distance, pass) << " " << car.calculateCostWeight(distance, weight) << std::endl;
 
         std::cout << car;
         std::cout << cart;
