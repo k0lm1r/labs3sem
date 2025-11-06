@@ -9,7 +9,8 @@ int main() {
         StringBuilder strObj1, strObj2;
         std::cout << "Введите строки:" << std::endl;
         std::cin >> strObj1 >> strObj2;
-        strObj1 += strObj2 += strObj2 += strObj2;
+        strObj1 += strObj2 += strObj2;
+
         if (!strObj1 || !strObj2) std::cout << "Одна из строк пуста" << std::endl;
         else {
             int a, b;
@@ -20,9 +21,7 @@ int main() {
             std::cout << "Символ на позиции " << a << " в первой строке: " << strObj1[a] << std::endl;
 
             char str[] = "test";
-            std::cout << strObj1 + strObj2 + str + strObj2 << std::endl;
-            std::cout << strObj1++ << " " << ++strObj1 << std::endl;
-            std::cout << strObj2-- << " " << --strObj2 << std::endl;
+            std::cout << strObj1-- + str + --strObj1 + str + strObj2++ + ++strObj2 << std::endl;
         }
 
         std::cout << "Хотите повторить?\n1 - Да\n2 - Нет" << std::endl;
