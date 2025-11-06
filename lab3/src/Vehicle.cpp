@@ -39,20 +39,29 @@ void Vehicle::setMaxWeight(double maxWeight) {
     this->maxWeight = maxWeight;
 }
 
-void Vehicle::printHeader() const {
-    std::cout << " | " << std::left << std::setw(5) << "Максимальная скорость транспорта";
-    std::cout << "| " << std::left << std::setw(5) << "Цена перевозки пассажиров для транспорта";
-    std::cout << "| " << std::left << std::setw(5) << "Цена перевозки груза для транспорта";
-    std::cout << "| " << std::left << std::setw(5) << "Максимальное число пассажиров";
-    std::cout << "| " << std::left << std::setw(5) << "Максимальный перевозимый вес";
+void Vehicle::printTable() const {
+    std::cout << " | " << std::setw(18) << speed;
+    std::cout << "| " << std::setw(17) << costPerPass;
+    std::cout << "| " << std::setw(17) << costPerKg;
+    std::cout << "| " << std::setw(17) << maxPass;
+    std::cout << "| " << maxWeight << std::endl;
 }
 
-void Vehicle::printTable() const {
-    std::cout << " | " << std::left << std::setw(5) << speed;
-    std::cout << "| " << std::left << std::setw(5) << costPerPass;
-    std::cout << "| " << std::left << std::setw(5) << costPerKg;
-    std::cout << "| " << std::left << std::setw(5) << maxPass;
-    std::cout << "| " << std::left << std::setw(5) << maxWeight;
+void Vehicle::printHeader() const {
+    std::cout << " | " << std::left << std::setw(18) << "Макс. скорость т/с";
+    std::cout << "| " << std::setw(17) << "Цена перев. пасс.";
+    std::cout << "| " << std::setw(17) << "Цена перев. груза";
+    std::cout << "| " << std::setw(17) << "Макс. число пасс.";
+    std::cout << "| " << "Макс. перевозимый вес" << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& out, const Vehicle& vehicle) {
+    out << " | " << std::setw(18) << vehicle.speed;
+    out << "| " << std::setw(17) << vehicle.costPerPass;
+    out << "| " << std::setw(17) << vehicle.costPerKg;
+    out << "| " << std::setw(17) << vehicle.maxPass;
+    out << "| " << vehicle.maxWeight << std::endl;
+    return out;
 }
 
 double Vehicle::calculateCostPassengers(double distance, int passengersCount) const {
@@ -64,4 +73,3 @@ double Vehicle::calculateCostWeight(double distance, double weight) const {
     if (weight > maxWeight) return distance * maxWeight * costPerKg;
     return distance * weight * costPerKg;
 }
-

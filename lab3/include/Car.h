@@ -15,6 +15,7 @@ class Car : public Vehicle {
 
         void printHeader() const override;
         void printTable() const override;
+        bool operator==(const Car& other) const;
 
         friend std::ostream& operator<<(std::ostream& os, const Car& car);
         friend std::istream& operator>>(std::istream& is, Car& car);

@@ -26,10 +26,11 @@ class Vehicle {
         virtual void setMaxPass(int maxPass);
         virtual void setMaxWeight(double maxWeight);
 
-
         double calculateCostPassengers(double distance, int passengersCount) const;
         double calculateCostWeight(double distance, double weight) const;
 
         virtual void printHeader() const;
         virtual void printTable() const;
+
+        friend std::ostream& operator<<(std::ostream& os, const Vehicle& car);
 };

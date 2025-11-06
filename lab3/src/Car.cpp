@@ -7,34 +7,28 @@ void Car::setMaxWeight(double maxWeight) {
     this->maxWeight = maxWeight <= 1500 ? maxWeight : 1500;
 }
 
-void Car::printHeader() const {
-    std::cout << " | " << std::left << std::setw(30) << "Максимальная скорость машины";
-    std::cout << "| " << std::left << std::setw(30) << "Цена перевозки пассажиров для машины";
-    std::cout << "| " << std::left << std::setw(30) << "Цена перевозки груза для машины";
-    std::cout << "| " << std::left << std::setw(30) << "Максимальное число пассажиров";
-    std::cout << "| " << std::left << std::setw(30) << "Максимальный перевозимый вес";
-}
-
 void Car::printTable() const {
     std::cout << " | " << std::left << std::setw(30) << speed;
-    std::cout << "| " << std::left << std::setw(30) << costPerPass;
-    std::cout << "| " << std::left << std::setw(30) << costPerKg;
-    std::cout << "| " << std::left << std::setw(30) << maxPass;
-    std::cout << "| " << std::left << std::setw(30) << maxWeight;
+    std::cout << "| " << std::setw(30) << costPerPass;
+    std::cout << "| " << std::setw(30) << costPerKg;
+    std::cout << "| " << std::setw(30) << maxPass;
+    std::cout << "| " << std::setw(30) << maxWeight;
+}
+
+void Car::printHeader() const {
+    std::cout << " | " << std::left << std::setw(19) << "Макс. скорость авт.";
+    std::cout << "| " << std::setw(17) << "Цена перев. пасс.";
+    std::cout << "| " << std::setw(17) << "Цена перев. груза";
+    std::cout << "| " << std::setw(17) << "Макс. число пасс.";
+    std::cout << "| " << "Макс. перевозимый вес" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& out, const Car& car) {
-    out << " | " << std::left << std::setw(30) << "Максимальная скорость машины";
-    out << "| " << std::left << std::setw(30) << "Цена перевозки пассажиров для машины";
-    out << "| " << std::left << std::setw(30) << "Цена перевозки груза для машины";
-    out << "| " << std::left << std::setw(30) << "Максимальное число пассажиров";
-    out << "| " << std::left << std::setw(30) << "Максимальный перевозимый вес";
-
-    out << " | " << std::left << std::setw(30) << car.speed;
-    out << "| " << std::left << std::setw(30) << car.costPerPass;
-    out << "| " << std::left << std::setw(30) << car.costPerKg;
-    out << "| " << std::left << std::setw(30) << car.maxPass;
-    out << "| " << std::left << std::setw(30) << car.maxWeight;
+    out << " | " << std::left << std::setw(19) << car.speed;
+    out << "| " << std::setw(17) << car.costPerPass;
+    out << "| " << std::setw(17) << car.costPerKg;
+    out << "| " << std::setw(17) << car.maxPass;
+    out << "| " << car.maxWeight << std::endl;
 
     return out;
 }

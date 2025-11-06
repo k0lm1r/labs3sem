@@ -7,34 +7,28 @@ void Cart::setMaxWeight(double maxWeight) {
     this->maxWeight = maxWeight <= 2000 ? maxWeight : 2000;
 }
 
-void Cart::printHeader() const {
-    std::cout << " | " << std::left << std::setw(30) << "Максимальная скорость повозки";
-    std::cout << "| " << std::left << std::setw(30) << "Цена перевозки пассажиров для повозки";
-    std::cout << "| " << std::left << std::setw(30) << "Цена перевозки груза для повозки";
-    std::cout << "| " << std::left << std::setw(30) << "Максимальное число пассажиров";
-    std::cout << "| " << std::left << std::setw(30) << "Максимальный перевозимый вес";
-}
-
 void Cart::printTable() const {
     std::cout << " | " << std::left << std::setw(30) << speed;
-    std::cout << "| " << std::left << std::setw(30) << costPerPass;
-    std::cout << "| " << std::left << std::setw(30) << costPerKg;
-    std::cout << "| " << std::left << std::setw(30) << maxPass;
-    std::cout << "| " << std::left << std::setw(30) << maxWeight;
+    std::cout << "| "  << std::setw(30) << costPerPass;
+    std::cout << "| "  << std::setw(30) << costPerKg;
+    std::cout << "| "  << std::setw(30) << maxPass;
+    std::cout << "| "  << std::setw(30) << maxWeight;
+}
+
+void Cart::printHeader() const {
+    std::cout << " | " << std::left << std::setw(19) << "Макс. скорость пов.";
+    std::cout << "| "  << std::setw(17) << "Цена перев. пасс.";
+    std::cout << "| "  << std::setw(17) << "Цена перев. груза";
+    std::cout << "| "  << std::setw(17) << "Макс. число пасс.";
+    std::cout << "| " << "Макс. перевозимый вес" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& out, const Cart& cart) {
-    out << " | " << std::left << std::setw(30) << "Максимальная скорость машины";
-    out << "| " << std::left << std::setw(30) << "Цена перевозки пассажиров для машины";
-    out << "| " << std::left << std::setw(30) << "Цена перевозки груза для машины";
-    out << "| " << std::left << std::setw(30) << "Максимальное число пассажиров";
-    out << "| " << std::left << std::setw(30) << "Максимальный перевозимый вес";
-
-    out << " | " << std::left << std::setw(30) << cart.speed;
-    out << "| " << std::left << std::setw(30) << cart.costPerPass;
-    out << "| " << std::left << std::setw(30) << cart.costPerKg;
-    out << "| " << std::left << std::setw(30) << cart.maxPass;
-    out << "| " << std::left << std::setw(30) << cart.maxWeight;
+    out << " | " << std::setw(19) << cart.speed;
+    out << "| " << std::setw(17) << cart.costPerPass;
+    out << "| " << std::setw(17) << cart.costPerKg;
+    out << "| " << std::setw(17) << cart.maxPass;
+    out << "| " << cart.maxWeight << std::endl;
 
     return out;
 }
