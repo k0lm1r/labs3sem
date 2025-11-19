@@ -1,10 +1,11 @@
 #include "Cart.h"
+#include <SafeInput.h>
 
 void Cart::setMaxPass(int maxPass) {
-    this->maxPass = maxPass <= 8 ? maxPass : 8; 
+    this->maxPass = maxPass; 
 }
 void Cart::setMaxWeight(double maxWeight) {
-    this->maxWeight = maxWeight <= 2000 ? maxWeight : 2000;
+    this->maxWeight = maxWeight;
 }
 
 void Cart::printTable() const {
@@ -37,7 +38,12 @@ std::istream& operator>>(std::istream& is, Cart& cart) {
     int maxPass;
     double maxWeight;
 
-    is >> cart.speed >> cart.costPerPass >> cart.costPerKg >> maxPass >> maxWeight;
+    cart.speed = SafeInput::inputDigit(is, "Введите скорость повозки:", 0, 30);
+    cart.costPerPass = SafeInput::inputDigit(is, "Введите цену перевозки пассажиров:", 0);
+    cart.costPerKg = SafeInput::inputDigit(is, "Введите цену перевозки грузов:", 0);
+    maxPass = SafeInput::inputDigit(is, "Введите максимальное число пассажиров:", 0, 8);
+    maxWeight = SafeInput::inputDigit(is, "Введите максимальный перевозимый вес:", 0, 2000);
+
     cart.setMaxPass(maxPass);
     cart.setMaxWeight(maxWeight);
 

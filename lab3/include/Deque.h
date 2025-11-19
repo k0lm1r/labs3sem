@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <functional>
+#include "Exceptions.h"
 
 template<typename T>
 class Deque {
@@ -39,14 +40,21 @@ class Deque {
         ~Deque() = default;
 
         T& peekFirst() const {
+            if (this->isEmpty())
+                throw ContainerException(103, "очередь пуста");
             return this->first->value;
         }
 
         T& peekLast() const {
+            if (this->isEmpty())
+                throw ContainerException(103, "очередь пуста");
             return this->last->value;
         }
 
         T takeFirst() {
+            if (this->isEmpty())
+                throw ContainerException(103, "очередь пуста");
+
             T firstValue = this->first->value;
             Node<T> *oldFirst = this->first;
             this->first = this->first->next;
@@ -55,6 +63,9 @@ class Deque {
         }
 
         T takeLast() {
+            if (this->isEmpty())
+                throw ContainerException(103, "очередь пуста");
+
             T lastValue = this->last->value;
             Node<T> *oldLast = this->last;
             this->last = this->last->next;
@@ -98,6 +109,22 @@ class Deque {
                     resultDeque.addLast(current->value);
             
             return resultDeque;
+        }
+
+        Deque& operator=(const Deque& other) {
+            if (this != &other) {
+                delete this->first;
+                delete this->last;
+                this->first = new Node<T>(other->first->value, nullptr, nullptr);
+                this->last = this->first;
+
+                for (Node<T>* current = other.first->next; current != nullptr; current = current->next) {
+                    Node<T>* newLast = new Node<T>(current->value, nullptr, this->last);
+                    this->last = newLast;
+                }
+            }
+
+            return *this;
         }
 
         friend std::ostream& operator<<(std::ostream& os, const Deque& d) {

@@ -1,4 +1,5 @@
 #include "Bike.h"
+#include <SafeInput.h>
 
 void Bike::setMaxPass(int maxPass) {
     this->maxPass = maxPass <= 2 ? maxPass : 2; 
@@ -37,7 +38,12 @@ std::istream& operator>>(std::istream& is, Bike& bike) {
     int maxPass;
     double maxWeight;
 
-    is >> bike.speed >> bike.costPerPass >> bike.costPerKg >> maxPass >> maxWeight;
+    bike.speed = SafeInput::inputDigit(is, "Введите скорость велосипеда:", 0, 30);
+    bike.costPerPass = SafeInput::inputDigit(is, "Введите цену перевозки пассажиров:", 0);
+    bike.costPerKg = SafeInput::inputDigit(is, "Введите цену перевозки грузов:", 0);
+    maxPass = SafeInput::inputDigit(is, "Введите максимальное число пассажиров:", 0, 2);
+    maxWeight = SafeInput::inputDigit(is, "Введите максимальный перевозимый вес:", 0, 200);
+
     bike.setMaxPass(maxPass);
     bike.setMaxWeight(maxWeight);
 
