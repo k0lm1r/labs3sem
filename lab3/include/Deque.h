@@ -39,6 +39,14 @@ class Deque {
         }
         ~Deque() = default;
 
+        Node<T>* getFrist() {
+            return this->first;
+        }
+
+        Node<T>* getLast() {
+            return this->last;
+        }
+
         T& peekFirst() const {
             if (this->isEmpty())
                 throw ContainerException(103, "очередь пуста");
@@ -97,7 +105,7 @@ class Deque {
             }
         }
 
-        bool isEmpty() {
+        bool isEmpty() const {
             return this->first == nullptr;
         }
 
@@ -113,8 +121,9 @@ class Deque {
 
         Deque& operator=(const Deque& other) {
             if (this != &other) {
-                delete this->first;
-                delete this->last;
+                while (!this->isEmpty())
+                    this->takeFirst();
+                
                 this->first = new Node<T>(other->first->value, nullptr, nullptr);
                 this->last = this->first;
 
@@ -128,8 +137,18 @@ class Deque {
         }
 
         friend std::ostream& operator<<(std::ostream& os, const Deque& d) {
-            for (Node<T>* current = d.first; current != nullptr; current = current->next)
-                os << current->value;
+            if (d.isEmpty()) {
+                os << "Очередь пуста." << std::endl;
+                return os;
+            }
+
+            for (Node<T>* current = d.first; current != nullptr; current = current->next) {
+                if constexpr (std::is_pointer_v<T>) {
+                    os << *current->value << std::endl;
+                } else {
+                    os << current->value << std::endl;
+                }
+            }
             return os;
         }
 };

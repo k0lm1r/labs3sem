@@ -12,7 +12,8 @@ class Vehicle {
 
     public:
         Vehicle() = default;
-        Vehicle(double speed, double costPerPass, double costPerKg) : speed(speed), costPerPass(costPerPass), costPerKg(costPerKg) {}
+        Vehicle(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight)
+            : speed(speed), costPerPass(costPerPass), costPerKg(costPerKg), maxPass(maxPass), maxWeight(maxWeight) {}
         virtual ~Vehicle() = default;
 
         double getSpeed() const;
@@ -23,8 +24,8 @@ class Vehicle {
         void setSpeed(double speed);
         void setCostPerPass(double costPerPass);
         void setCostPerKg(double costPerKg);
-        virtual void setMaxPass(int maxPass);
-        virtual void setMaxWeight(double maxWeight);
+        void setMaxPass(int maxPass);
+        void setMaxWeight(double maxWeight);
 
         double calculateCostPassengers(double distance, int passengersCount) const;
         double calculateCostWeight(double distance, double weight) const;

@@ -3,18 +3,15 @@
 #include "Vehicle.h"
 
 class Bike : public Vehicle {
+    int gears = 0;
     public:
         Bike() = default;
-        Bike(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight) : Vehicle(speed, costPerPass, costPerKg) {
-            setMaxPass(maxPass);
-            setMaxWeight(maxWeight);
-        }
+        Bike(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight, int gears) 
+            : Vehicle(speed, costPerPass, costPerKg, maxPass, maxWeight), gears(gears) {}
         ~Bike() = default;
 
-
-        void setMaxPass(int maxPass) override;
-        void setMaxWeight(double maxWeight) override;
-
+        int getGears() const;
+        void setGears(int gears);
         void printHeader() const override;
         void printTable() const override;
 

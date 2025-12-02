@@ -2,17 +2,18 @@
 #include "Vehicle.h"
 
 class Car : public Vehicle {
+    int year;
     public:
         Car() = default;
-        Car(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight) : Vehicle(speed, costPerPass, costPerKg) {
+        Car(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight, int year) 
+            : Vehicle(speed, costPerPass, costPerKg, maxPass, maxWeight), year(year) {
             setMaxPass(maxPass);
             setMaxWeight(maxWeight);
         }
         ~Car() = default;
 
-        void setMaxPass(int maxPass) override;
-        void setMaxWeight(double maxWeight) override;
-
+        int getYear() const;
+        void setYear(int year);
         void printHeader() const override;
         void printTable() const override;
         bool operator==(const Car& other) const;

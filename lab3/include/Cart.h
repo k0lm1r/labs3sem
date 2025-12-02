@@ -2,17 +2,18 @@
 #include "Vehicle.h"
 
 class Cart : public Vehicle {
+    bool hasCover;
     public:
         Cart() = default;
-        Cart(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight) : Vehicle(speed, costPerPass, costPerKg) {
+        Cart(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight, bool hasCover) 
+            : Vehicle(speed, costPerPass, costPerKg, maxPass, maxWeight), hasCover(hasCover) {
             setMaxPass(maxPass);
             setMaxWeight(maxWeight);
         }
         ~Cart() = default;
 
-        void setMaxPass(int maxPass) override;
-        void setMaxWeight(double maxWeight) override;
-
+        bool isCovered() const;
+        void setHasCover(bool hasCover);
         void printHeader() const override;
         void printTable() const override;
 
