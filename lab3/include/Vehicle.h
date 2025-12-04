@@ -15,6 +15,8 @@ class Vehicle {
         Vehicle() = default;
         Vehicle(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight)
             : speed(speed), costPerPass(costPerPass), costPerKg(costPerKg), maxPass(maxPass), maxWeight(maxWeight) {}
+        Vehicle(const Vehicle& other) 
+            : speed(other.speed), costPerPass(other.costPerPass), costPerKg(other.costPerKg), maxPass(other.maxPass), maxWeight(other.maxWeight) {}
         virtual ~Vehicle() = default;
 
         double getSpeed() const;

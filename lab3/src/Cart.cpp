@@ -10,26 +10,18 @@ void Cart::setHasCover(bool hasCover) {
 }
 
 void Cart::printTable() const {
-    std::cout << " | " << std::setw(19) << this->speed;
-    std::cout << "| " << std::setw(17) << this->costPerPass;
-    std::cout << "| " << std::setw(17) << this->costPerKg;
-    std::cout << "| " << std::setw(17) << this->maxPass;
-    std::cout << "| " << std::setw(20) << this->maxWeight;
-    std::cout << "| " << this->hasCover << std::endl;
+    Vehicle::printTable();
+    std::cout << "| " << this->hasCover;
 }
 
 void Cart::printHeader() const {
-    std::cout << " | " << std::left << std::setw(19) << "Макс. скорость пов.";
-    std::cout << "| "  << std::setw(17) << "Цена перев. пасс.";
-    std::cout << "| "  << std::setw(17) << "Цена перев. груза";
-    std::cout << "| "  << std::setw(17) << "Макс. число пасс.";
-    std::cout << "| " << std::setw(20) << "Макс. перевозимый вес";
-    std::cout << "| " << "Имеет крышу" << std::endl;
+    Vehicle::printHeader();
+    std::cout << "| " << "Имеет крышу";
 }
 
 std::ostream& operator<<(std::ostream& out, const Cart& cart) {
     out << static_cast<const Vehicle&>(cart);
-    out << "| " << cart.hasCover << std::endl;
+    out << "| " << cart.hasCover;
 
     return out;
 }

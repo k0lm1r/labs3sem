@@ -8,6 +8,7 @@ class Bike : public Vehicle {
         Bike() = default;
         Bike(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight, int gears) 
             : Vehicle(speed, costPerPass, costPerKg, maxPass, maxWeight), gears(gears) {}
+        Bike (const Bike& other) : Vehicle(other), gears(other.gears) {}
         ~Bike() = default;
 
         int getGears() const;

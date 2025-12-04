@@ -5,7 +5,6 @@
 
 template<typename T>
 class Deque {
-
     public:
         template<typename N>
         class Node {
@@ -29,20 +28,20 @@ class Deque {
                 N& getValue() {return this->value; }
                 Node* getNext() const { return this->next; }
                 Node* getPrev() const {return this->prev; }
-
+                
                 friend class Deque;
         };
-
-    private:
-        Node<T>* first = nullptr;
-        Node<T>* last = nullptr;
-
-    public:
-        Deque() = default;
-        Deque(T& firstValue) {
-            this->first = new Node<T>(firstValue, nullptr, nullptr);
-            this->last = this->first;
-        }
+            
+        private:
+            Node<T>* first = nullptr;
+            Node<T>* last = nullptr;
+            
+        public:
+            Deque() = default;
+            Deque(T& firstValue) {
+                this->first = new Node<T>(firstValue, nullptr, nullptr);
+                this->last = this->first;
+            }
         Deque(const Deque& other) : Deque(other.first->value) {
             for (Node<T>* current = other.first->next; current != nullptr; current = current->next) {
                 Node<T>* newLast = new Node<T>(current->value, nullptr, this->last);
@@ -50,11 +49,11 @@ class Deque {
             }
         }
         ~Deque() {
-            if (this->first != nullptr) 
-                delete this->first;
+            if (this->first != nullptr)
+            delete this->first;
         }
-
-
+        
+        
         T& peekFirst() const;
         T& peekLast() const;
         T takeFirst();
@@ -65,12 +64,76 @@ class Deque {
         bool isEmpty() const;
         Deque<T> find(const std::function<bool(const T&)>& searchTerm) const;
         Deque& operator=(const Deque& other);
-
+        
         template <typename F>
         friend std::ostream& operator<<(std::ostream& os, const Deque<F>& d);
-
-        template <typename F>
-        friend std::istream& operator>>(std::istream& is, Deque<F>& d);
-};
-
-#include "../src/Deque.tpp"
+        
+    };
+    
+    #include "../src/Deque.tpp"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // void setValue(N& value) { this->value = value; }
+    
+    // template <typename F>
+    // friend std::istream& operator>>(std::istream& is, Deque<F>& d);

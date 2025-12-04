@@ -139,19 +139,54 @@ std::ostream &operator<<(std::ostream &os, const Deque<T> &d)
     return os;
 }
 
-template <typename T>
-std::istream &operator>>(std::istream &is, Deque<T> &d)
-{
-    for (typename Deque<T>::Node<T>* current = d.first; current != nullptr; current = current->getNext())
-    {
-        if constexpr (std::is_pointer_v<T>)
-        {
-            is >> *current->getValue();
-        } else
-            is >> current->getValue();
-    }
-
-    return is;
-}
-
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// template <typename T>
+// std::istream &operator>>(std::istream &is, Deque<T> &d)
+// {
+//     for (typename Deque<T>::Node<T>* current = d.first; current != nullptr; current = current->getNext())
+//     {
+//         T value;
+//         is >> value;
+//         if constexpr (std::is_pointer_v<T>)
+//         {
+//             current->setValue(new T(value));
+//         } else
+//             current->setValue(value);
+//     }
+
+//     return is;
+// }

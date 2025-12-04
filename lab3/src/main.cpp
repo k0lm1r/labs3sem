@@ -170,6 +170,58 @@ void pause() {
     }
 }
 
+
+int main() {
+    Deque<Vehicle*> transportDeque;
+    int choice = 1;
+
+    while (choice != 0) {
+        showMainMenu();
+
+        try {
+            choice = (int)SafeInput::inputDigit(std::cin, "", 0, 12);
+        }
+        catch (const InputException& e) {
+            std::cout << "Ошибка ввода: " << e.what() << std::endl;
+            continue;
+        }
+
+        try {
+            switch (choice) {
+                case 0: break;
+                case 1: addToFront(transportDeque); break;
+                case 2: addToBack(transportDeque); break;
+                case 3: removeFromFront(transportDeque); break;
+                case 4: removeFromBack(transportDeque); break;
+                case 5: showFirst(transportDeque); break;
+                case 6: showLast(transportDeque); break;
+                case 7: showAllAsTable(transportDeque); break;
+                case 8: sortDeque(transportDeque); break;
+                case 9: showSearch(transportDeque); break;
+                default:
+                std::cout << "Неверный пункт меню!\n";
+            }
+        }
+        catch (const ContainerException& e) {
+            std::cout << "Ошибка контейнера: " << e.what() << std::endl;
+        }
+        catch (const InputException& e) {
+            std::cout << "Ошибка ввода: " << e.what() << std::endl;
+        }
+        catch (const std::exception& e) {
+            std::cout << "Неизвестная ошибка: " << e.what() << std::endl;
+        }
+        
+        pause();
+    }
+}
+
+
+
+
+
+// case 10: replaceFirstVehicle(transportDeque); break;
+// case 11: replaceLastVehicle(transportDeque); break;
 // void replaceLastVehicle(Deque<Vehicle*>& deque) {
 //     if (deque.isEmpty()) {
 //         std::cout << "Дек пуст!" << std::endl;
@@ -203,50 +255,3 @@ void pause() {
 //         std::cout << "Ошибка при замене первого элемента: " << e.what() << std::endl;
 //     }
 // }
-
-int main() {
-    Deque<Vehicle*> transportDeque;
-    int choice = 1;
-
-    while (choice != 0) {
-        showMainMenu();
-
-        try {
-            choice = (int)SafeInput::inputDigit(std::cin, "", 0, 12);
-        }
-        catch (const InputException& e) {
-            std::cout << "Ошибка ввода: " << e.what() << std::endl;
-            continue;
-        }
-
-        try {
-            switch (choice) {
-                case 0: break;
-                case 1: addToFront(transportDeque); break;
-                case 2: addToBack(transportDeque); break;
-                case 3: removeFromFront(transportDeque); break;
-                case 4: removeFromBack(transportDeque); break;
-                case 5: showFirst(transportDeque); break;
-                case 6: showLast(transportDeque); break;
-                case 7: showAllAsTable(transportDeque); break;
-                case 8: sortDeque(transportDeque); break;
-                case 9: showSearch(transportDeque); break;
-                // case 10: replaceFirstVehicle(transportDeque); break;
-                // case 11: replaceLastVehicle(transportDeque); break;
-                default:
-                    std::cout << "Неверный пункт меню!\n";
-            }
-        }
-        catch (const ContainerException& e) {
-            std::cout << "Ошибка контейнера: " << e.what() << std::endl;
-        }
-        catch (const InputException& e) {
-            std::cout << "Ошибка ввода: " << e.what() << std::endl;
-        }
-        catch (const std::exception& e) {
-            std::cout << "Неизвестная ошибка: " << e.what() << std::endl;
-        }
-
-        pause();
-    }
-}

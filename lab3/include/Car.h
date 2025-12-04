@@ -11,6 +11,7 @@ class Car : public Vehicle {
             setMaxPass(maxPass);
             setMaxWeight(maxWeight);
         }
+        Car(const Car& other) : Vehicle(other), year(year) {}
         ~Car() = default;
 
         int getYear() const;

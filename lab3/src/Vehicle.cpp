@@ -40,23 +40,23 @@ void Vehicle::setMaxWeight(double maxWeight) {
 }
 
 void Vehicle::printTable() const {
-    std::cout << " | " << std::setw(18) << speed;
+    std::cout << std::endl << " | " << std::setw(18) << speed;
     std::cout << "| " << std::setw(17) << costPerPass;
     std::cout << "| " << std::setw(17) << costPerKg;
     std::cout << "| " << std::setw(17) << maxPass;
-    std::cout << "| " << maxWeight << std::endl;
+    std::cout << "| " << maxWeight;
 }
 
 void Vehicle::printHeader() const {
-    std::cout << " | " << std::left << std::setw(18) << "Макс. скорость т/с";
+    std::cout << std::endl << " | " << std::left << std::setw(18) << "Макс. скорость т/с";
     std::cout << "| " << std::setw(17) << "Цена перев. пасс.";
     std::cout << "| " << std::setw(17) << "Цена перев. груза";
     std::cout << "| " << std::setw(17) << "Макс. число пасс.";
-    std::cout << "| " << "Макс. перевозимый вес" << std::endl;
+    std::cout << "| " << "Макс. перевозимый вес";
 }
 
 std::ostream& operator<<(std::ostream& out, const Vehicle& vehicle) {
-    out << " | " << std::setw(18) << vehicle.speed;
+    out << std::endl << " | " << std::setw(18) << vehicle.speed;
     out << "| " << std::setw(17) << vehicle.costPerPass;
     out << "| " << std::setw(17) << vehicle.costPerKg;
     out << "| " << std::setw(17) << vehicle.maxPass;

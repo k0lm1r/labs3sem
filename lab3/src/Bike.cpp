@@ -10,26 +10,18 @@ void Bike::setGears(int gears) {
 }
 
 void Bike::printTable() const {
-    std::cout << " | " << std::setw(20) << this->speed;
-    std::cout << "| " << std::setw(17) << this->costPerPass;
-    std::cout << "| " << std::setw(17) << this->costPerKg;
-    std::cout << "| " << std::setw(17) << this->maxPass;
-    std::cout << "| " << std::setw(17) << this->maxWeight;
-    std::cout << "| " << this->gears << std::endl;
+    Vehicle::printTable();
+    std::cout << "| " << this->gears;
 }
 
 void Bike::printHeader() const {
-    std::cout << " | " << std::left << std::setw(20) << "Макс. скорость вел.";
-    std::cout << "| " << std::setw(17) << "Цена перев. пасс.";
-    std::cout << "| " << std::setw(17) << "Цена перев. груза";
-    std::cout << "| " << std::setw(17) << "Макс. число пасс.";
-    std::cout << "| " << std::setw(20) << "Макс. перевозимый вес";
-    std::cout << "| " << "Число передач" << std::endl;
+    Vehicle::printHeader();
+    std::cout << "| " << "Число передач";
 }
 
 std::ostream& operator<<(std::ostream& out, const Bike& bike) {
     out << static_cast<const Vehicle&>(bike);
-    out << "| " << bike.gears << std::endl;
+    out << "| " << bike.gears;
 
     return out;
 }

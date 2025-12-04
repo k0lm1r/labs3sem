@@ -10,26 +10,18 @@ void Car::setYear(int year) {
 }
 
 void Car::printTable() const {
-    std::cout << " | " << std::left << std::setw(19) << this->speed;
-    std::cout << "| " << std::setw(17) << this->costPerPass;
-    std::cout << "| " << std::setw(17) << this->costPerKg;
-    std::cout << "| " << std::setw(17) << this->maxPass;
-    std::cout << "| " << std::setw(20) << this->maxWeight;
-    std::cout << "| " << this->year << std::endl;
+    Vehicle::printTable();
+    std::cout << "| " << this->year;
 }
 
 void Car::printHeader() const {
-    std::cout << " | " << std::left << std::setw(19) << "Макс. скорость авт.";
-    std::cout << "| " << std::setw(17) << "Цена перев. пасс.";
-    std::cout << "| " << std::setw(17) << "Цена перев. груза";
-    std::cout << "| " << std::setw(17) << "Макс. число пасс.";
-    std::cout << "| " << std::setw(20) << "Макс. перевозимый вес";
-    std::cout << "| " << "Год выпуска" << std::endl;
+    Vehicle::printHeader();
+    std::cout << "| " << "Год выпуска";
 }
 
 std::ostream& operator<<(std::ostream& out, const Car& car) {
     out << static_cast<const Vehicle&>(car);
-    out << "| " << car.year << std::endl;
+    out << "| " << car.year;
 
     return out;
 }

@@ -10,6 +10,7 @@ class Cart : public Vehicle {
             setMaxPass(maxPass);
             setMaxWeight(maxWeight);
         }
+        Cart(const Cart& other) : Vehicle(other), hasCover(other.hasCover) {}
         ~Cart() = default;
 
         bool isCovered() const;
