@@ -18,7 +18,6 @@ void showMainMenu() {
     std::cout << "7.  Вывести всю очередь\n";
     std::cout << "8.  Сортировать\n";
     std::cout << "9.  Поиск по минимальной вместимости пассажиров\n";
-    std::cout << "10. Очистить очередь\n";
     std::cout << "0.  Выход\n";
     std::cout << "Выберите пункт: ";
 }
@@ -171,45 +170,39 @@ void pause() {
     }
 }
 
-void clearDequeMemory(Deque<Vehicle*>& deque) {
-    while (!deque.isEmpty()) {
-        delete deque.takeFirst();
-    }
-}
-
-void replaceLastVehicle(Deque<Vehicle*>& deque) {
-    if (deque.isEmpty()) {
-        std::cout << "Дек пуст!" << std::endl;
-        return;
-    }
+// void replaceLastVehicle(Deque<Vehicle*>& deque) {
+//     if (deque.isEmpty()) {
+//         std::cout << "Дек пуст!" << std::endl;
+//         return;
+//     }
     
-    try {
-        std::cout << "Замена последнего элемента:" << std::endl;
-        Vehicle* newVehicle = createVehicleInteractively();
-        deque.takeLast();
-        deque.addLast(newVehicle);
-        std::cout << "Последний элемент заменен!" << std::endl;
-    } catch (const Exception& e) {
-        std::cout << "Ошибка при замене последнего элемента: " << e.what() << std::endl;
-    }
-}
+//     try {
+//         std::cout << "Замена последнего элемента:" << std::endl;
+//         Vehicle* newVehicle = createVehicleInteractively();
+//         deque.takeLast();
+//         deque.addLast(newVehicle);
+//         std::cout << "Последний элемент заменен!" << std::endl;
+//     } catch (const Exception& e) {
+//         std::cout << "Ошибка при замене последнего элемента: " << e.what() << std::endl;
+//     }
+// }
 
-void replaceFirstVehicle(Deque<Vehicle*>& deque) {
-    if (deque.isEmpty()) {
-        std::cout << "Дек пуст!" << std::endl;
-        return;
-    }
+// void replaceFirstVehicle(Deque<Vehicle*>& deque) {
+//     if (deque.isEmpty()) {
+//         std::cout << "Дек пуст!" << std::endl;
+//         return;
+//     }
     
-    try {
-        std::cout << "Замена первого элемента:" << std::endl;
-        Vehicle* newVehicle = createVehicleInteractively();
-        deque.takeFirst();
-        deque.addFirst(newVehicle);
-        std::cout << "Первый элемент заменен!" << std::endl;
-    } catch (const Exception& e) {
-        std::cout << "Ошибка при замене первого элемента: " << e.what() << std::endl;
-    }
-}
+//     try {
+//         std::cout << "Замена первого элемента:" << std::endl;
+//         Vehicle* newVehicle = createVehicleInteractively();
+//         deque.takeFirst();
+//         deque.addFirst(newVehicle);
+//         std::cout << "Первый элемент заменен!" << std::endl;
+//     } catch (const Exception& e) {
+//         std::cout << "Ошибка при замене первого элемента: " << e.what() << std::endl;
+//     }
+// }
 
 int main() {
     Deque<Vehicle*> transportDeque;
@@ -221,9 +214,8 @@ int main() {
         try {
             choice = (int)SafeInput::inputDigit(std::cin, "", 0, 12);
         }
-        catch (...) {
-            std::cout << "Ошибка ввода пункта меню!\n";
-            pause();
+        catch (const InputException& e) {
+            std::cout << "Ошибка ввода: " << e.what() << std::endl;
             continue;
         }
 
@@ -239,9 +231,8 @@ int main() {
                 case 7: showAllAsTable(transportDeque); break;
                 case 8: sortDeque(transportDeque); break;
                 case 9: showSearch(transportDeque); break;
-                case 10: clearDequeMemory(transportDeque); break;
-                case 11: replaceFirstVehicle(transportDeque); break;
-                case 12: replaceLastVehicle(transportDeque); break;
+                // case 10: replaceFirstVehicle(transportDeque); break;
+                // case 11: replaceLastVehicle(transportDeque); break;
                 default:
                     std::cout << "Неверный пункт меню!\n";
             }
@@ -255,12 +246,7 @@ int main() {
         catch (const std::exception& e) {
             std::cout << "Неизвестная ошибка: " << e.what() << std::endl;
         }
-        catch (...) {
-            std::cout << "Критическая ошибка!\n";
-        }
 
         pause();
     }
-
-    clearDequeMemory(transportDeque);
 }

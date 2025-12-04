@@ -3,6 +3,7 @@
 
 class Car : public Vehicle {
     int year;
+
     public:
         Car() = default;
         Car(double speed, double costPerPass, double costPerKg, int maxPass, double maxWeight, int year) 

@@ -28,26 +28,15 @@ void Cart::printHeader() const {
 }
 
 std::ostream& operator<<(std::ostream& out, const Cart& cart) {
-    out << " | " << std::setw(19) << cart.speed;
-    out << "| " << std::setw(17) << cart.costPerPass;
-    out << "| " << std::setw(17) << cart.costPerKg;
-    out << "| " << std::setw(17) << cart.maxPass;
-    out << "| " << std::setw(20) << cart.maxWeight;
+    out << static_cast<const Vehicle&>(cart);
     out << "| " << cart.hasCover << std::endl;
 
     return out;
 }
 
 std::istream& operator>>(std::istream& is, Cart& cart) {
-    int maxPass;
-    double maxWeight;
-
-    cart.speed = SafeInput::inputDigit(is, "Введите скорость повозки:", 0, 30);
-    cart.costPerPass = SafeInput::inputDigit(is, "Введите цену перевозки пассажиров:", 0);
-    cart.costPerKg = SafeInput::inputDigit(is, "Введите цену перевозки грузов:", 0);
-    cart.maxPass = SafeInput::inputDigit(is, "Введите максимальное число пассажиров:", 0, 8);
-    cart.maxWeight = SafeInput::inputDigit(is, "Введите максимальный перевозимый вес:", 0, 2000);
-    cart.hasCover = SafeInput::inputDigit(is, "Имеет ли повозка крышу?\n1 - Да\n2 - Нет", 0, 1);
-    
+    is >> static_cast<Vehicle&>(cart);
+    int coverChoice = SafeInput::inputDigit(is, "Имеет ли повозка крышу?\n1 - Да\n2 - Нет", 1, 2);
+    cart.hasCover = coverChoice == 1 ? 1 : 0;
     return is;
 }

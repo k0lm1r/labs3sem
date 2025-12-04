@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <iomanip>
+#include "SafeInput.h"
 
 class Vehicle {
     protected:
@@ -33,5 +34,6 @@ class Vehicle {
         virtual void printHeader() const;
         virtual void printTable() const;
 
-        friend std::ostream& operator<<(std::ostream& os, const Vehicle& car);
+        friend std::ostream& operator<<(std::ostream& os, const Vehicle& vehicle);
+        friend std::istream& operator>>(std::istream& is, Vehicle& vehicle);
 };

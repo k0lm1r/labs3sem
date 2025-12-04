@@ -60,8 +60,17 @@ std::ostream& operator<<(std::ostream& out, const Vehicle& vehicle) {
     out << "| " << std::setw(17) << vehicle.costPerPass;
     out << "| " << std::setw(17) << vehicle.costPerKg;
     out << "| " << std::setw(17) << vehicle.maxPass;
-    out << "| " << vehicle.maxWeight << std::endl;
+    out << "| " << vehicle.maxWeight;
     return out;
+}
+
+std::istream& operator>>(std::istream& is, Vehicle& vehicle) {
+    vehicle.speed = SafeInput::inputDigit(is, "Введите скорость:", 0, 400);
+    vehicle.costPerPass = SafeInput::inputDigit(is, "Введите цену перевозки пассажиров:", 0);
+    vehicle.costPerKg = SafeInput::inputDigit(is, "Введите цену перевозки грузов:", 0);
+    vehicle.maxPass = SafeInput::inputDigit(is, "Введите максимальное число пассажиров:", 0, 5);
+    vehicle.maxWeight = SafeInput::inputDigit(is, "Введите максимальный перевозимый вес:", 0, 1500);
+    return is;
 }
 
 double Vehicle::calculateCostPassengers(double distance, int passengersCount) const {
